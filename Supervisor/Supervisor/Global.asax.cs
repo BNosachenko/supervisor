@@ -12,12 +12,12 @@ namespace Supervisor
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
 
-            Database.SetInitializer(new CreateDatabaseIfNotExists<Contexts>());
-            using (var ctx = new Contexts(ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString))
+           /* Database.SetInitializer(new CreateDatabaseIfNotExists<Contexts>());
+            using (var ctx = new Contexts(ConfigurationManager.ConnectionStrings["Contexts"].ConnectionString))
             {
                 ctx.Configuration.LazyLoadingEnabled = false;
                 ctx.Configuration.ProxyCreationEnabled = false;
-            }
+            }*/
         }
     }
 }
