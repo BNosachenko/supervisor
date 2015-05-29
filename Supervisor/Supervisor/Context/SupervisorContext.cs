@@ -5,11 +5,18 @@ namespace Supervisor.Context
     using System.Data.Entity;
     using System.Data.Entity.ModelConfiguration.Conventions;
 
-    public class Contexts : DbContext
+    public class SupervisorContext : DbContext
     {
-        public Contexts(string ConnectionStr)
-            :base("Contexts")
-        { }
+        public SupervisorContext()
+            : base("SupervisorContext")
+        {
+#if DEBUG
+            this.Database.Log = s => System.Diagnostics.Debug.WriteLine(s);
+#endif
+            this.Configuration.LazyLoadingEnabled = false;
+            this.Configuration.ProxyCreationEnabled = false;
+            this.Configuration.UseDatabaseNullSemantics = true;
+        }
 
         public DbSet<AgentModel> Agents { get; set; }
 

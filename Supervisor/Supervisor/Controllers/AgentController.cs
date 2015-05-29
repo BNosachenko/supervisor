@@ -7,15 +7,12 @@ namespace Supervisor.Controllers
     using System.Collections.Generic;
     using System.Web.Http;
 
-
     public class AgentController : BaseModelController<AgentModel>
     {
-        private Contexts db = new Contexts("Contexts");
-        // GET: Agent
-        public string GetAgent()
+        public AgentController(SupervisorContext ctx)
+            :base(ctx)
         {
-            String agents = db.Agents.ToString();
-            return agents;
+
         }
     }
 }

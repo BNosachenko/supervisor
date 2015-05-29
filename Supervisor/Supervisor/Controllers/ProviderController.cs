@@ -7,27 +7,12 @@ namespace Supervisor.Controllers
     //using System.Web.Http;
     using System.Web.Mvc;
 
-    public class ProviderController : BaseModelController<ProvidedGoodsModel>
+    public class ProviderController : BaseModelController<ProviderModel>
     {
-        private Contexts db = new Contexts("Contexts");
-        // GET: Agent
-        public string GetProvider()
+        public ProviderController(SupervisorContext ctx)
+            :base(ctx)
         {
-            String providers = db.Providers.ToString();
-            return providers;
-        }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ProviderModel Create([Bind(Include = "Address,Name,Phone")] ProviderModel provider)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Providers.Add(provider);
-                db.SaveChanges();
-                return provider;
-            }
-            return provider;
         }
     }
 }

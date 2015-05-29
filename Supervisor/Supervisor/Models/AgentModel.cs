@@ -7,12 +7,14 @@ namespace Supervisor.Models
 
     public class AgentModel : BaseModel
     {
-        public Guid ProviderId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Phone { get; set; }
 
+        public Guid ProviderId { get; set; }
+
         public virtual ProviderModel Provider { get; set; }
+
         public virtual ICollection<ProvidedGoodsModel> ProvidedGoods { get; set; }
     }
 }
