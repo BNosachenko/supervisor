@@ -8,6 +8,6 @@ namespace Supervisor.Models
         public string Name { get; set; }
         public string Phone { get; set; }
 
-        public virtual ICollection<AgentModel> Agents { get; set; }
+        //public virtual ICollection<AgentModel> Agents { get; set; }
     }
 }

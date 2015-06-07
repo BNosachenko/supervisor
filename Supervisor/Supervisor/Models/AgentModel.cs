@@ -14,7 +14,6 @@ namespace Supervisor.Models
         public Guid ProviderId { get; set; }
 
         public virtual ProviderModel Provider { get; set; }
-
-        public virtual ICollection<ProvidedGoodsModel> ProvidedGoods { get; set; }
+        
     }
 }

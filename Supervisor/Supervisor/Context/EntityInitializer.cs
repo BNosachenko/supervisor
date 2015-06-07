@@ -23,6 +23,20 @@ namespace Supervisor.Context
             };
 
             agents.ForEach(s => context.Agents.Add(s));
+
+            var providedGoods = new List<ProvidedGoodsModel>
+            {
+                new ProvidedGoodsModel { Id = Guid.NewGuid(), Name="Milk", Price=78787, Agent = agents.First() }
+            };
+
+            providedGoods.ForEach(s => context.ProvidedGoods.Add(s));
+
+            var contract = new List<ContractModel>
+            {
+                new ContractModel { Id = Guid.NewGuid(), Number=15, ContractDate=DateTime.Now, ProductCount=15, ProvidedGood = providedGoods.First() }
+            };
+
+            contract.ForEach(s => context.Contracts.Add(s));
             context.SaveChanges();
         }
     }

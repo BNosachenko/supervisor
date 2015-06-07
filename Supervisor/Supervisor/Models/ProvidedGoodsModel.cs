@@ -12,6 +12,5 @@ namespace Supervisor.Models
         public decimal Price { get; set; }
 
         public virtual AgentModel Agent { get; set; }
-        public virtual ICollection<ContractModel> Contracts { get; set; }
     }
 }

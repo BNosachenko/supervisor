@@ -12,6 +12,6 @@ namespace Supervisor.Models
         public DateTime ContractDate { get; set; }
         public int ProductCount { get; set; }
 
-        public virtual ProvidedGoodsModel Providers { get; set; }
+        public virtual ProvidedGoodsModel ProvidedGood { get; set; }
     }
 }
